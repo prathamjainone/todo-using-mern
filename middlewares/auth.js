@@ -1,9 +1,8 @@
 import { User } from "../models/UserSchema.js";
 import jwt from "jsonwebtoken";
-import { dbConnect } from "../database/db.js";
 
 export const isAuthenticated = async (req, res, next) => {
-  let conn=await dbConnect();
+
   const { token } = req.cookies;
 
   if (!token)
